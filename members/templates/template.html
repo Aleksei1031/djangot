@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    {% comment %} <link rel="stylesheet" href="{% static 'myglobal.css' %}"> {% endcomment %}
+  </head>
+<body>
+  {% with greeting=1 day="friday" %}
+  {% if greeting == 2 or day == "friday" and greeting == 3 %}
+  <h1>Hello how are you? {{greeting}} {{day}}</h1>
+  {% else %}
+  <h1>greeting not exist</h1>
+  {% endif %}
+  
+  {% endwith %}
+
+{% for x in mymembers %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+
+</body>
+</html>
